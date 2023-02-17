@@ -1,0 +1,190 @@
+/* Default Styles */
+
+body{
+    font-family: "Montserrat";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat";
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+
+/* Containers */
+
+.container-fluid{
+    padding: 0% 20%;
+}
+
+/* Navigation Bar */
+
+.navbar{
+    padding-bottom: 50px;
+}
+
+.navbar-brand{
+    font-family: "Ubuntu";
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.nav-item{
+    padding-left: 20px;
+
+}
+
+.nav-link{
+    font-size: 1.5rem;
+}
+
+/* Title Section */
+
+#title{
+    padding-top: 20px;
+    padding-bottom: 90px;
+    background-color: #ff4c68;
+    color: white;
+}
+
+.download-button {
+    margin-top: 5%;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+.title-img{
+    width: 20%;
+    transform: rotate(25deg);
+    margin-left: 100px;
+    position: absolute;
+}
+
+/* Feature Section */
+
+#features{
+    background-color: #ffffff;
+    padding-top: 8%;
+    padding-bottom: 8%;
+    font-family: "Montserrat";
+    position: relative;
+    z-index: 1;
+}
+
+.feature-col {
+    text-align: center;
+}
+
+.feature-icon {
+    color: #ef8172;
+    font-size: 4rem;
+    padding-bottom: 10%;
+}
+
+.feature-icon:hover {
+    color: #c97368;
+}
+
+.feature-h3 {
+    font-size: 1.5rem;
+    font-weight: 1000;
+}
+
+.feature-p {
+    font-size: 1rem;
+    color: #8f8f8f;
+}
+
+/* Testimonials Section */
+
+#testimonials {
+    padding-top: 0%;
+    padding-bottom: 0%;
+    text-align: center;
+    background-color:#ef8172;
+    color: #ffffff;
+}
+
+.testimonial-img {
+    border-radius: 100%;
+    width: 15%;
+    margin: 2% 0% 10% 0%;
+}
+
+.carousel-item {
+    padding: 7% 20% 3% 20%;
+}
+
+.testimonial-signatures {
+    padding-left: 30px;
+    font-size: 1.5rem;
+}
+
+/* Press Section */
+
+#press {
+    background-color: #ef8172;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.press-img {
+    width: 12%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* Pricing Section */
+
+#pricing {
+    padding: 5% 15%;
+}
+
+.pricing-col{
+    padding: 20px 25px;
+}
+
+/* Call to Action Section */
+
+.call-to-action{
+    text-align: center;
+    background-color: #ff4c68;
+    color: #fff;
+    padding: 5% 20%;
+}
+
+
+/* Footer Section */
+
+.footer-section{
+    text-align: center;
+    padding: 2% 30% 1%;
+}
+
+.footer-icons{
+    margin: 5% 2%;
+}
+
+/* Responsiveness */
+
+@media (max-width: 1028px){
+
+    #title{
+        text-align: center;
+    }
+
+    .title-img{
+        position: static;
+        transform: rotate(0);
+    }
+
+}
