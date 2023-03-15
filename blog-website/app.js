@@ -12,22 +12,38 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+app.get('/', function (request, response) {
+  response.render('home', {
+    homeContent: homeStartingContent,
+  });
+});
 
+app.get('/about', function (request, response) {
+  response.render('about', {
+    homeContent: aboutContent,
+  });
+});
 
+app.get('/contact', function (request, response) {
+  response.render('contact', {
+    homeContent: contactContent,
+  });
+});
 
+app.get('/compose', function (request, response) {
+  response.render('compose', {
 
+  });
+});
 
+app.post('/compose', function (request, response) {
+  console.log(request.body.composeEntry);
+  response.redirect('/compose');
+});
 
-
-
-
-
-
-
-
-app.listen(3000, function() {
+app.listen(3000, function () {
   console.log("Server started on port 3000");
 });
