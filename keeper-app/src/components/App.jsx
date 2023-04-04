@@ -1,24 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import { Header } from './Header';
-import { Footer } from './Footer';
-
-import { Note } from './Note';
-
-import notes from '../notes';
-
-
+import React, { useState, useId } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Note from "./Note";
+import CreateArea from "./CreateArea";
 
 function App() {
+
+    const [notes, setNotes] = useState([]);
+
+
+    const [newNote, setNewNote] = useState({
+        title: '',
+        content: '',
+    });
+
+    function addNote(event) {
+        setNotes((prevValue) => {
+            return [...prevValue, newNote];
+        });
+
+        setNewNote({
+            title: '',
+            content: '',
+        });
+
+        event.preventDefault();
+    }
+
+    function writeNote(event) {
+        const { name, value } = event.target;
+        setNewNote((prevValue) => {
+            if (name === 'content') {
+                return { ...prevValue, content: value };
+            } else if (name === 'title') {
+                return { ...prevValue, title: value };
+            }
+        });
+
+    }
+
     return (
         <div>
             <Header />
-            {notes.map((note) => {
-                return <Note title={note.title} content={note.content} />
+            <CreateArea addNote={addNote} writeNote={writeNote} newNote={newNote} />
+            {notes.map((note, index) => {
+                return <Note key={index} id={index} title={note.title} content={note.content} />
             })}
             <Footer />
-        </div>);
+        </div>
+    );
 }
 
 export default App;
