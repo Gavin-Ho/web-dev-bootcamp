@@ -5,9 +5,7 @@ import Note from "./Note";
 import CreateArea from "./CreateArea";
 
 function App() {
-
     const [notes, setNotes] = useState([]);
-
 
     const [newNote, setNewNote] = useState({
         title: '',
@@ -18,13 +16,17 @@ function App() {
         setNotes((prevValue) => {
             return [...prevValue, newNote];
         });
-
         setNewNote({
             title: '',
             content: '',
         });
-
         event.preventDefault();
+    }
+
+    function deleteNote(id) {
+        setNotes((prevNotes) => {
+            return prevNotes.filter((note, index) => (index !== id));
+        })
     }
 
     function writeNote(event) {
@@ -36,7 +38,6 @@ function App() {
                 return { ...prevValue, title: value };
             }
         });
-
     }
 
     return (
@@ -44,7 +45,7 @@ function App() {
             <Header />
             <CreateArea addNote={addNote} writeNote={writeNote} newNote={newNote} />
             {notes.map((note, index) => {
-                return <Note key={index} id={index} title={note.title} content={note.content} />
+                return <Note key={index} id={index} title={note.title} content={note.content} deleteNote={deleteNote} />
             })}
             <Footer />
         </div>
